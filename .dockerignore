@@ -1,0 +1,14 @@
+# Ignore local development server
+server.py
+
+# Ignore raw database and scraper outputs
+*.json
+generate_js_products.py
+
+# Ignore Docker configurations
+Dockerfile
+.dockerignore
+
+# Ignore Git files
+.git
+.gitignore

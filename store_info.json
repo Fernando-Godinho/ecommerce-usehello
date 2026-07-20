@@ -1,0 +1,1016 @@
+[{
+  "document": {
+    "name": "projects/webcatalogo-1/databases/(default)/documents/lojas/6qoLmB0EkQWJnSRhZAvA",
+    "fields": {
+      "cidade": {
+        "stringValue": "Porto Alegre"
+      },
+      "comoSoube": {
+        "stringValue": "Pesquisa Google"
+      },
+      "dataCriacao": {
+        "stringValue": "2026-05-13 20:56:26.395830"
+      },
+      "email": {
+        "stringValue": "gabrielaviliano@icloud.com"
+      },
+      "estado": {
+        "stringValue": "RS"
+      },
+      "link": {
+        "stringValue": "hello"
+      },
+      "linkOriginal": {
+        "stringValue": ""
+      },
+      "nomeResponsavel": {
+        "stringValue": "Gabriela"
+      },
+      "plataforma": {
+        "stringValue": "ios"
+      },
+      "retiradaLoja": {
+        "booleanValue": false
+      },
+      "segmento": {
+        "stringValue": "Varejo"
+      },
+      "semHorariosEntrega": {
+        "booleanValue": true
+      },
+      "usuarioCriador": {
+        "stringValue": "ZGJ0hcXsavNsA1P0HDL2B2l0ICy2"
+      },
+      "tagLojaProIn": {
+        "stringValue": ""
+      },
+      "tagNovaLojaIn": {
+        "stringValue": "2026-05-13 20:56:26.809850"
+      },
+      "tagNovaLoja": {
+        "booleanValue": true
+      },
+      "tagPlanoCancelado": {
+        "booleanValue": false
+      },
+      "mensagemDelivery": {
+        "booleanValue": false
+      },
+      "jaTevePlano": {
+        "booleanValue": false
+      },
+      "tagPlanoCanceladoIn": {
+        "stringValue": ""
+      },
+      "tagLojaPro": {
+        "booleanValue": false
+      },
+      "codigoConvite": {
+        "stringValue": "6qoLmB"
+      },
+      "horariosRetiradaFeriados": {
+        "arrayValue": {}
+      },
+      "tagJaFezPedidoTeste": {
+        "booleanValue": false
+      },
+      "tagLojaAtivaIn": {
+        "stringValue": ""
+      },
+      "contatado": {
+        "booleanValue": false
+      },
+      "tagLojaAtiva": {
+        "booleanValue": false
+      },
+      "abValorPlano": {
+        "stringValue": "A"
+      },
+      "lojaId": {
+        "stringValue": "6qoLmB0EkQWJnSRhZAvA"
+      },
+      "tagJaFezPedidoTesteIn": {
+        "stringValue": ""
+      },
+      "trialPro": {
+        "booleanValue": true
+      },
+      "mensagemRetirada": {
+        "booleanValue": false
+      },
+      "taxasDeEntrega": {
+        "mapValue": {
+          "fields": {
+            "0": {
+              "stringValue": "R$ 0,00"
+            },
+            "1": {
+              "stringValue": "R$ 0,00"
+            },
+            "2": {
+              "stringValue": "R$ 0,00"
+            },
+            "3": {
+              "stringValue": "R$ 0,00"
+            },
+            "4": {
+              "stringValue": "R$ 0,00"
+            }
+          }
+        }
+      },
+      "horariosRetirada": {
+        "mapValue": {
+          "fields": {
+            "Dom": {
+              "arrayValue": {}
+            },
+            "Qua": {
+              "arrayValue": {}
+            },
+            "Qui": {
+              "arrayValue": {}
+            },
+            "Seg": {
+              "arrayValue": {}
+            },
+            "Sex": {
+              "arrayValue": {}
+            },
+            "Sáb": {
+              "arrayValue": {}
+            },
+            "Ter": {
+              "arrayValue": {}
+            }
+          }
+        }
+      },
+      "planoAtivo": {
+        "booleanValue": false
+      },
+      "horariosEntregaFeriados": {
+        "arrayValue": {}
+      },
+      "membros": {
+        "integerValue": "1"
+      },
+      "historia": {
+        "stringValue": ""
+      },
+      "linkAtacado": {
+        "stringValue": ""
+      },
+      "introducao": {
+        "stringValue": "A HELLO foi criada para fazer você se sentir linda, confiante e poderosa em cada treino. 🎀"
+      },
+      "whatsApp": {
+        "stringValue": "(51) 99131-0075"
+      },
+      "complemento": {
+        "stringValue": ""
+      },
+      "endereco": {
+        "stringValue": "Rua Vinte e Quatro de Outubro"
+      },
+      "numero": {
+        "stringValue": "942"
+      },
+      "bairro": {
+        "stringValue": "Moinhos de Vento"
+      },
+      "missao": {
+        "stringValue": ""
+      },
+      "referencia": {
+        "stringValue": ""
+      },
+      "cep": {
+        "stringValue": "90510-000"
+      },
+      "lat": {
+        "doubleValue": -30.0233858
+      },
+      "long": {
+        "doubleValue": -51.1993397
+      },
+      "urlLogo": {
+        "stringValue": "https://firebasestorage.googleapis.com/v0/b/webcatalogo-1.appspot.com/o/6qoLmB0EkQWJnSRhZAvA%2F6qoLmB0EkQWJnSRhZAvA.jpg?alt=media&token=07e780e5-2c5a-4b71-b888-940cac50b395"
+      },
+      "produtoPadrao": {
+        "mapValue": {}
+      },
+      "valorFrete": {
+        "doubleValue": 0
+      },
+      "valorFreteGratuito": {
+        "doubleValue": 0
+      },
+      "tipoFrete": {
+        "stringValue": "aCombinar"
+      },
+      "frete": {
+        "booleanValue": true
+      },
+      "freteGratuito": {
+        "booleanValue": false
+      },
+      "agendamentoDelivery": {
+        "booleanValue": true
+      },
+      "delivery": {
+        "booleanValue": true
+      },
+      "qtdRanges": {
+        "integerValue": "0"
+      },
+      "listMapEntregaFeriados": {
+        "arrayValue": {}
+      },
+      "taxaDinamica": {
+        "booleanValue": false
+      },
+      "distanciaMax": {
+        "integerValue": "10"
+      },
+      "horariosEntrega": {
+        "mapValue": {
+          "fields": {
+            "Dom": {
+              "arrayValue": {}
+            },
+            "Qua": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "09:00"
+                  },
+                  {
+                    "stringValue": "09:30"
+                  },
+                  {
+                    "stringValue": "10:00"
+                  },
+                  {
+                    "stringValue": "10:30"
+                  },
+                  {
+                    "stringValue": "11:00"
+                  },
+                  {
+                    "stringValue": "11:30"
+                  },
+                  {
+                    "stringValue": "12:00"
+                  },
+                  {
+                    "stringValue": "12:30"
+                  },
+                  {
+                    "stringValue": "13:00"
+                  },
+                  {
+                    "stringValue": "13:30"
+                  },
+                  {
+                    "stringValue": "14:00"
+                  },
+                  {
+                    "stringValue": "14:30"
+                  },
+                  {
+                    "stringValue": "15:00"
+                  },
+                  {
+                    "stringValue": "15:30"
+                  },
+                  {
+                    "stringValue": "16:00"
+                  },
+                  {
+                    "stringValue": "16:30"
+                  },
+                  {
+                    "stringValue": "17:00"
+                  },
+                  {
+                    "stringValue": "17:30"
+                  },
+                  {
+                    "stringValue": "18:00"
+                  },
+                  {
+                    "stringValue": "18:30"
+                  }
+                ]
+              }
+            },
+            "Qui": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "09:00"
+                  },
+                  {
+                    "stringValue": "09:30"
+                  },
+                  {
+                    "stringValue": "10:00"
+                  },
+                  {
+                    "stringValue": "10:30"
+                  },
+                  {
+                    "stringValue": "11:00"
+                  },
+                  {
+                    "stringValue": "11:30"
+                  },
+                  {
+                    "stringValue": "12:00"
+                  },
+                  {
+                    "stringValue": "12:30"
+                  },
+                  {
+                    "stringValue": "13:00"
+                  },
+                  {
+                    "stringValue": "13:30"
+                  },
+                  {
+                    "stringValue": "14:00"
+                  },
+                  {
+                    "stringValue": "14:30"
+                  },
+                  {
+                    "stringValue": "15:00"
+                  },
+                  {
+                    "stringValue": "15:30"
+                  },
+                  {
+                    "stringValue": "16:00"
+                  },
+                  {
+                    "stringValue": "16:30"
+                  },
+                  {
+                    "stringValue": "17:00"
+                  },
+                  {
+                    "stringValue": "17:30"
+                  },
+                  {
+                    "stringValue": "18:00"
+                  },
+                  {
+                    "stringValue": "18:30"
+                  }
+                ]
+              }
+            },
+            "Seg": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "09:00"
+                  },
+                  {
+                    "stringValue": "09:30"
+                  },
+                  {
+                    "stringValue": "10:00"
+                  },
+                  {
+                    "stringValue": "10:30"
+                  },
+                  {
+                    "stringValue": "11:00"
+                  },
+                  {
+                    "stringValue": "11:30"
+                  },
+                  {
+                    "stringValue": "12:00"
+                  },
+                  {
+                    "stringValue": "12:30"
+                  },
+                  {
+                    "stringValue": "13:00"
+                  },
+                  {
+                    "stringValue": "13:30"
+                  },
+                  {
+                    "stringValue": "14:00"
+                  },
+                  {
+                    "stringValue": "14:30"
+                  },
+                  {
+                    "stringValue": "15:00"
+                  },
+                  {
+                    "stringValue": "15:30"
+                  },
+                  {
+                    "stringValue": "16:00"
+                  },
+                  {
+                    "stringValue": "16:30"
+                  },
+                  {
+                    "stringValue": "17:00"
+                  },
+                  {
+                    "stringValue": "17:30"
+                  },
+                  {
+                    "stringValue": "18:00"
+                  },
+                  {
+                    "stringValue": "18:30"
+                  }
+                ]
+              }
+            },
+            "Sex": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "09:00"
+                  },
+                  {
+                    "stringValue": "09:30"
+                  },
+                  {
+                    "stringValue": "10:00"
+                  },
+                  {
+                    "stringValue": "10:30"
+                  },
+                  {
+                    "stringValue": "11:00"
+                  },
+                  {
+                    "stringValue": "11:30"
+                  },
+                  {
+                    "stringValue": "12:00"
+                  },
+                  {
+                    "stringValue": "12:30"
+                  },
+                  {
+                    "stringValue": "13:00"
+                  },
+                  {
+                    "stringValue": "13:30"
+                  },
+                  {
+                    "stringValue": "14:00"
+                  },
+                  {
+                    "stringValue": "14:30"
+                  },
+                  {
+                    "stringValue": "15:00"
+                  },
+                  {
+                    "stringValue": "15:30"
+                  },
+                  {
+                    "stringValue": "16:00"
+                  },
+                  {
+                    "stringValue": "16:30"
+                  },
+                  {
+                    "stringValue": "17:00"
+                  },
+                  {
+                    "stringValue": "17:30"
+                  },
+                  {
+                    "stringValue": "18:00"
+                  },
+                  {
+                    "stringValue": "18:30"
+                  }
+                ]
+              }
+            },
+            "Sáb": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "09:00"
+                  },
+                  {
+                    "stringValue": "09:30"
+                  },
+                  {
+                    "stringValue": "10:00"
+                  },
+                  {
+                    "stringValue": "10:30"
+                  },
+                  {
+                    "stringValue": "11:00"
+                  },
+                  {
+                    "stringValue": "11:30"
+                  },
+                  {
+                    "stringValue": "12:00"
+                  },
+                  {
+                    "stringValue": "12:30"
+                  },
+                  {
+                    "stringValue": "13:00"
+                  },
+                  {
+                    "stringValue": "13:30"
+                  },
+                  {
+                    "stringValue": "14:00"
+                  },
+                  {
+                    "stringValue": "14:30"
+                  },
+                  {
+                    "stringValue": "15:00"
+                  },
+                  {
+                    "stringValue": "15:30"
+                  },
+                  {
+                    "stringValue": "16:00"
+                  },
+                  {
+                    "stringValue": "16:30"
+                  },
+                  {
+                    "stringValue": "17:00"
+                  },
+                  {
+                    "stringValue": "17:30"
+                  },
+                  {
+                    "stringValue": "18:00"
+                  },
+                  {
+                    "stringValue": "18:30"
+                  }
+                ]
+              }
+            },
+            "Ter": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "09:00"
+                  },
+                  {
+                    "stringValue": "09:30"
+                  },
+                  {
+                    "stringValue": "10:00"
+                  },
+                  {
+                    "stringValue": "10:30"
+                  },
+                  {
+                    "stringValue": "11:00"
+                  },
+                  {
+                    "stringValue": "11:30"
+                  },
+                  {
+                    "stringValue": "12:00"
+                  },
+                  {
+                    "stringValue": "12:30"
+                  },
+                  {
+                    "stringValue": "13:00"
+                  },
+                  {
+                    "stringValue": "13:30"
+                  },
+                  {
+                    "stringValue": "14:00"
+                  },
+                  {
+                    "stringValue": "14:30"
+                  },
+                  {
+                    "stringValue": "15:00"
+                  },
+                  {
+                    "stringValue": "15:30"
+                  },
+                  {
+                    "stringValue": "16:00"
+                  },
+                  {
+                    "stringValue": "16:30"
+                  },
+                  {
+                    "stringValue": "17:00"
+                  },
+                  {
+                    "stringValue": "17:30"
+                  },
+                  {
+                    "stringValue": "18:00"
+                  },
+                  {
+                    "stringValue": "18:30"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "valorTaxaGratis": {
+        "stringValue": "R$ 0,00"
+      },
+      "rangesDeEntrega": {
+        "arrayValue": {
+          "values": [
+            {
+              "integerValue": "0"
+            },
+            {
+              "integerValue": "0"
+            },
+            {
+              "integerValue": "0"
+            },
+            {
+              "integerValue": "0"
+            },
+            {
+              "integerValue": "0"
+            }
+          ]
+        }
+      },
+      "taxaPlanoGratuito": {
+        "mapValue": {
+          "fields": {
+            "taxaEntrega": {
+              "stringValue": "R$ 0,00"
+            },
+            "taxaEscolhida": {
+              "stringValue": "aCombinar"
+            }
+          }
+        }
+      },
+      "taxaGratuita": {
+        "booleanValue": false
+      },
+      "0criouProduto": {
+        "booleanValue": true
+      },
+      "personalizacoes": {
+        "mapValue": {}
+      },
+      "debito": {
+        "arrayValue": {
+          "values": [
+            {
+              "stringValue": "Mastercard"
+            },
+            {
+              "stringValue": "Visa"
+            },
+            {
+              "stringValue": "Elo"
+            }
+          ]
+        }
+      },
+      "valeRefeicao": {
+        "arrayValue": {}
+      },
+      "credito": {
+        "arrayValue": {
+          "values": [
+            {
+              "stringValue": "Mastercard"
+            },
+            {
+              "stringValue": "Visa"
+            },
+            {
+              "stringValue": "Amex"
+            },
+            {
+              "stringValue": "Elo"
+            },
+            {
+              "stringValue": "Hipercard"
+            }
+          ]
+        }
+      },
+      "formasPagamento": {
+        "mapValue": {
+          "fields": {
+            "cartaoOffline": {
+              "booleanValue": true
+            },
+            "cartaoOnline": {
+              "booleanValue": false
+            },
+            "dinheiro": {
+              "booleanValue": true
+            },
+            "pix": {
+              "booleanValue": false
+            },
+            "pixAuto": {
+              "booleanValue": false
+            },
+            "whatsApp": {
+              "booleanValue": true
+            }
+          }
+        }
+      },
+      "provedor": {
+        "stringValue": ""
+      },
+      "antecipacaoClientes": {
+        "stringValue": "todos"
+      },
+      "pix": {
+        "mapValue": {
+          "fields": {
+            "chave": {
+              "stringValue": ""
+            },
+            "nome": {
+              "stringValue": ""
+            },
+            "tipo": {
+              "stringValue": "Celular"
+            }
+          }
+        }
+      },
+      "antecipacao50": {
+        "booleanValue": false
+      },
+      "emailsRecebidos": {
+        "arrayValue": {
+          "values": [
+            {
+              "stringValue": "ativeSuaLoja"
+            },
+            {
+              "stringValue": "perguntasFrequentes"
+            }
+          ]
+        }
+      },
+      "nome": {
+        "stringValue": "Use Hello"
+      },
+      "tipoCatalogo": {
+        "integerValue": "2"
+      },
+      "ordemProdutos": {
+        "mapValue": {
+          "fields": {
+            "7I4YXnmpxwOmdsvaNWs3": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "STbqive8UWQJz3SxeCbu"
+                  },
+                  {
+                    "stringValue": "Skf3mPlBW323MXpVwFUc"
+                  },
+                  {
+                    "stringValue": "8PiNADqznrFpzp5QP16G"
+                  },
+                  {
+                    "stringValue": "Cc2dOLS7L0sFXfZQrCvr"
+                  }
+                ]
+              }
+            },
+            "8ViueDdPCwNfQ5axayCa": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "FIIfI27kPiGLqvrXuEMP"
+                  },
+                  {
+                    "stringValue": "fQ2fp9LwbUT7jdirNvGD"
+                  },
+                  {
+                    "stringValue": "rXWjVBHfKWebaHd5e8dk"
+                  },
+                  {
+                    "stringValue": "cPfm7VbQgW9O0FXqVul4"
+                  },
+                  {
+                    "stringValue": "fxELpRdw3AoVVoZ7QmNP"
+                  },
+                  {
+                    "stringValue": "sbgpVkIYWmiBpRQrsztq"
+                  },
+                  {
+                    "stringValue": "GFZuc4unVyasQ4e08urP"
+                  },
+                  {
+                    "stringValue": "WkFZEcp3UZ7Ny6nFDm74"
+                  },
+                  {
+                    "stringValue": "JE8dl7D2I1HUvtqraPoo"
+                  },
+                  {
+                    "stringValue": "9ocMgD61X8JvGBhvh4rV"
+                  },
+                  {
+                    "stringValue": "2m4TBGFnLJI4zSgkfxqz"
+                  },
+                  {
+                    "stringValue": "2isgsJswKET0VNn0Tfkq"
+                  },
+                  {
+                    "stringValue": "1nSLjTTpv3vk22ij9D3m"
+                  },
+                  {
+                    "stringValue": "R72WIaoAvoVkta4USIfL"
+                  },
+                  {
+                    "stringValue": "ExvIPi5LNOJpcXjdToOB"
+                  },
+                  {
+                    "stringValue": "xrPP2AlhgXP1U5kOiO6K"
+                  },
+                  {
+                    "stringValue": "UleJtfWARWXd0LEJ85aj"
+                  },
+                  {
+                    "stringValue": "IvVILeimszyJU08iYun9"
+                  },
+                  {
+                    "stringValue": "QZIWThRYSt7029gfxrWe"
+                  },
+                  {
+                    "stringValue": "6PrEcYJB9IjsixFvYc1k"
+                  },
+                  {
+                    "stringValue": "FeltriPylj1y9ziwRsKp"
+                  },
+                  {
+                    "stringValue": "2HvUPPi8KArlUqsVejTC"
+                  },
+                  {
+                    "stringValue": "C7hLhrX70kxgDmSoqiJ1"
+                  },
+                  {
+                    "stringValue": "pyBordYh09ZjMwxPu2so"
+                  },
+                  {
+                    "stringValue": "YVRBHAQnvSd99SbkEy68"
+                  },
+                  {
+                    "stringValue": "msLJQVdAGILXMxqRUcCZ"
+                  },
+                  {
+                    "stringValue": "ggABwUBH6nDvNARgaxj6"
+                  }
+                ]
+              }
+            },
+            "LOa7g0YxrwzE99T8TxXv": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "5FqMF4gjg6lBB8q2QQnU"
+                  },
+                  {
+                    "stringValue": "k0BQtFovclDGneIDb3JW"
+                  },
+                  {
+                    "stringValue": "AFyqaYviSg77TyjDHJzf"
+                  }
+                ]
+              }
+            },
+            "QB6kotP2yMQPvfs9MePs": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "ZdtUYC4CmWbhn8M1Pazh"
+                  },
+                  {
+                    "stringValue": "9dwPwtgdjprnJ4Vw66Ne"
+                  },
+                  {
+                    "stringValue": "05w2jJu0JSQy4lo181Ke"
+                  },
+                  {
+                    "stringValue": "6HyaSaVtjOsxTHI5QFf8"
+                  },
+                  {
+                    "stringValue": "3KkMxLMvGd6RIS7JrSfE"
+                  },
+                  {
+                    "stringValue": "O4fSIlKdkSd2FVVL5oeF"
+                  },
+                  {
+                    "stringValue": "Pq9pjW8AbTZO28lwLVSu"
+                  },
+                  {
+                    "stringValue": "a2YDZoFFEg26UYsiqb5W"
+                  },
+                  {
+                    "stringValue": "Vxj764aPDul9l0rqzvV5"
+                  },
+                  {
+                    "stringValue": "XABl1zEfG4FqRkV1keZs"
+                  },
+                  {
+                    "stringValue": "NJfgyGnLwhjlW1Gb4xkR"
+                  },
+                  {
+                    "stringValue": "slF8UQv4DhoPRISvZOKr"
+                  },
+                  {
+                    "stringValue": "1l3HoCYg5ZGycpv5wvhu"
+                  },
+                  {
+                    "stringValue": "SUP5rkF9Py1LFE7m6ldr"
+                  },
+                  {
+                    "stringValue": "nzOnmACOJiaPpGt3rtBM"
+                  },
+                  {
+                    "stringValue": "o2XBwvw2rq3DdSET6BwQ"
+                  },
+                  {
+                    "stringValue": "boar09r6t1YC7lDV4bAD"
+                  },
+                  {
+                    "stringValue": "nG0IEta06i5rBdx1zHDm"
+                  }
+                ]
+              }
+            },
+            "gFkyekzQjhtHZlV8SzsD": {
+              "arrayValue": {
+                "values": [
+                  {
+                    "stringValue": "gqgbjaxQXAuv7ckBy2iC"
+                  },
+                  {
+                    "stringValue": "D4y2EdRskw05YBeDLYH0"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "produtosCriados": {
+        "integerValue": "59"
+      },
+      "leadCarrinho": {
+        "booleanValue": true
+      },
+      "2viuCarrinho": {
+        "booleanValue": true
+      },
+      "ultimoCarrinho": {
+        "stringValue": "2026-06-28 14:04:51.879793"
+      },
+      "primeiroCarrinho": {
+        "stringValue": "2026-06-28 14:04:51.879784"
+      },
+      "lastLogin": {
+        "stringValue": "2026-07-07 20:46:27.192968"
+      },
+      "lastModified": {
+        "stringValue": "2026-07-07 20:46:27.192974"
+      }
+    },
+    "createTime": "2026-05-13T23:56:26.699242Z",
+    "updateTime": "2026-07-07T23:46:27.595130Z"
+  },
+  "readTime": "2026-07-20T22:15:35.096503Z"
+}
+]
