@@ -1597,3 +1597,111 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   PROMOTION COUNTDOWN & COUPON STYLES (NEW ARCHITECTURE)
+   ========================================================================== */
+.promo-countdown-banner {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  padding: 10px 16px;
+  font-family: var(--font-title);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  animation: slideDownAnnouncement 0.5s ease-out;
+}
+
+.promo-banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.promo-tag {
+  background-color: #FFFFFF;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow-sm);
+}
+
+.countdown-clock {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.clock-unit {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  min-width: 32px;
+  text-align: center;
+}
+
+/* Coupon Styles */
+.cart-coupon-box {
+  background-color: var(--bg-light);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.coupon-input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.coupon-input-group input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.coupon-input-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: #FFFFFF;
+}
+
+.coupon-input-group button {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-radius: 50px;
+  padding: 8px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-title);
+  letter-spacing: 0.05em;
+  transition: var(--transition-fast);
+}
+
+.coupon-input-group button:hover {
+  background-color: var(--primary-hover);
+}
+
+#coupon-feedback-message {
+  font-size: 11px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.cart-footer .discount-row {
+  color: var(--accent);
+}
+

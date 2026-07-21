@@ -5,17 +5,27 @@ let cart = [];
 let selectedCategory = 'Todos';
 let searchQuery = '';
 let currentProduct = null; // For Quick View Modal
+let appliedCoupon = null; // Applied coupon configuration
+
+// Dynamic data loading (CMS Integration)
+let STORE_PRODUCTS = PRODUCTS || [];
+let STORE_CONFIG = CONFIG || { coupons: [], promoTimer: { active: false } };
 
 // LocalStorage Keys
 const STORAGE_KEY = 'use_hello_cart';
+const PRODUCTS_KEY = 'use_hello_db_products';
+const CONFIG_KEY = 'use_hello_db_config';
 
 // WhatsApp Configuration
 const WHATSAPP_PHONE = '5551991310075'; // Store's WhatsApp (51) 99131-0075
 
 // ==========================================================================
-// DOM ELEMENTS
+// DOM ELEMENTS & INITIALIZATION
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
+  // Load dynamic store catalog & settings
+  loadDynamicStoreData();
+
   // Load cart from storage
   loadCart();
   
@@ -25,7 +35,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // Setup event listeners
   setupEventListeners();
   updateCartUI();
+
+  // Initialize promo countdown timer
+  initPromoTimer();
 });
+
+function loadDynamicStoreData() {
+  const localProducts = localStorage.getItem(PRODUCTS_KEY);
+  if (localProducts) {
+    try {
+      STORE_PRODUCTS = JSON.parse(localProducts);
+    } catch (e) {
+      STORE_PRODUCTS = PRODUCTS || [];
+    }
+  }
+  
+  const localConfig = localStorage.getItem(CONFIG_KEY);
+  if (localConfig) {
+    try {
+      STORE_CONFIG = JSON.parse(localConfig);
+    } catch (e) {
+      STORE_CONFIG = CONFIG || { coupons: [], promoTimer: { active: false } };
+    }
+  }
+}
 
 // ==========================================================================
 // CART OPERATIONS
@@ -98,6 +131,21 @@ function getCartSubtotal() {
   }, 0);
 }
 
+function getCartDiscount() {
+  if (!appliedCoupon) return 0;
+  const subtotal = getCartSubtotal();
+  if (appliedCoupon.type === 'percentage') {
+    return subtotal * (appliedCoupon.value / 100);
+  } else if (appliedCoupon.type === 'fixed') {
+    return Math.min(appliedCoupon.value, subtotal);
+  }
+  return 0;
+}
+
+function getCartTotal() {
+  return Math.max(0, getCartSubtotal() - getCartDiscount());
+}
+
 function getCartCount() {
   return cart.reduce((count, item) => count + item.quantity, 0);
 }
@@ -135,6 +183,11 @@ function updateCartUI() {
     }
     
     subtotalVal.textContent = 'R$ 0,00';
+    
+    // Reset coupon input state
+    appliedCoupon = null;
+    const discountRow = document.getElementById('cart-discount-row');
+    if (discountRow) discountRow.style.display = 'none';
   } else {
     badgeCount.style.display = 'flex';
     
@@ -183,9 +236,24 @@ function updateCartUI() {
       });
     });
     
+    // Calculate final totals and discounts
     const subtotal = getCartSubtotal();
-    const formattedSubtotal = formatCurrency(subtotal);
-    subtotalVal.textContent = formattedSubtotal;
+    const discount = getCartDiscount();
+    const total = getCartTotal();
+    
+    subtotalVal.textContent = formatCurrency(subtotal);
+    
+    const discountRow = document.getElementById('cart-discount-row');
+    const discountVal = document.getElementById('cart-discount-val');
+    const discountName = document.getElementById('applied-coupon-name');
+    
+    if (appliedCoupon) {
+      discountRow.style.display = 'flex';
+      discountName.textContent = appliedCoupon.code;
+      discountVal.textContent = '-' + formatCurrency(discount);
+    } else {
+      discountRow.style.display = 'none';
+    }
     
     // Update Checkout Modal Summary if open
     if (checkoutItemsList) {
@@ -198,11 +266,21 @@ function updateCartUI() {
           </div>
         `;
       });
+      
+      if (appliedCoupon) {
+        summaryHtml += `
+          <div class="summary-item-row" style="color: var(--accent); font-weight: 700;">
+            <span>Cupom: ${appliedCoupon.code} (-${appliedCoupon.value}${appliedCoupon.type === 'percentage' ? '%' : ''})</span>
+            <span>-${formatCurrency(discount)}</span>
+          </div>
+        `;
+      }
+      
       checkoutItemsList.innerHTML = summaryHtml;
     }
     
     if (checkoutTotalPrice) {
-      checkoutTotalPrice.textContent = formattedSubtotal;
+      checkoutTotalPrice.textContent = formatCurrency(total);
     }
   }
 }
@@ -219,7 +297,7 @@ function renderProducts() {
   if (!container) return;
   
   // Filter products based on active filters
-  const filtered = PRODUCTS.filter(product => {
+  const filtered = STORE_PRODUCTS.filter(product => {
     const matchesCategory = selectedCategory === 'Todos' || product.category === selectedCategory;
     const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           product.description.toLowerCase().includes(searchQuery.toLowerCase());
@@ -273,7 +351,7 @@ function renderProducts() {
 
 // Helper to add directly using default size M
 function addToCartDirect(productId) {
-  const prod = PRODUCTS.find(p => p.id === productId);
+  const prod = STORE_PRODUCTS.find(p => p.id === productId);
   if (prod) {
     addToCart(prod, 'M', 1);
   }
@@ -295,7 +373,7 @@ function closeCartDrawer() {
 }
 
 function openQuickView(productId) {
-  const prod = PRODUCTS.find(p => p.id === productId);
+  const prod = STORE_PRODUCTS.find(p => p.id === productId);
   if (!prod) return;
   
   currentProduct = prod;
@@ -418,6 +496,107 @@ function showToast(message) {
 }
 
 // ==========================================================================
+// COUPON APPLICATION LOGIC
+// ==========================================================================
+function handleCouponApplication(code) {
+  const feedback = document.getElementById('coupon-feedback-message');
+  if (!feedback) return;
+  
+  if (!code) {
+    feedback.textContent = 'Por favor, digite um código de cupom.';
+    feedback.style.color = 'var(--text-muted)';
+    return;
+  }
+  
+  if (cart.length === 0) {
+    feedback.textContent = 'Seu carrinho está vazio para aplicar o cupom.';
+    feedback.style.color = 'var(--accent)';
+    return;
+  }
+  
+  if (!STORE_CONFIG.coupons || STORE_CONFIG.coupons.length === 0) {
+    feedback.textContent = 'Nenhum cupom disponível nesta loja.';
+    feedback.style.color = 'var(--accent)';
+    return;
+  }
+  
+  const coupon = STORE_CONFIG.coupons.find(c => c.code === code);
+  
+  if (coupon && coupon.active) {
+    appliedCoupon = coupon;
+    updateCartUI();
+    feedback.textContent = `Cupom ${code} aplicado com sucesso! 🎉`;
+    feedback.style.color = 'var(--success)';
+  } else {
+    appliedCoupon = null;
+    updateCartUI();
+    feedback.textContent = 'Cupom inválido ou expirado.';
+    feedback.style.color = 'var(--accent)';
+  }
+}
+
+// ==========================================================================
+// PROMOTION COUNTDOWN TIMER
+// ==========================================================================
+let promoInterval = null;
+
+function initPromoTimer() {
+  const banner = document.getElementById('promo-countdown-banner');
+  if (!banner) return;
+  
+  const timer = STORE_CONFIG.promoTimer;
+  if (!timer || !timer.active || !timer.endDate) {
+    banner.style.display = 'none';
+    return;
+  }
+  
+  const bannerTitle = document.getElementById('promo-banner-title');
+  const bannerSubtitle = document.getElementById('promo-banner-subtitle');
+  if (bannerTitle) bannerTitle.textContent = timer.title;
+  if (bannerSubtitle) bannerSubtitle.textContent = timer.subtitle;
+  
+  const endDate = new Date(timer.endDate).getTime();
+  
+  if (isNaN(endDate) || endDate <= Date.now()) {
+    banner.style.display = 'none';
+    return;
+  }
+  
+  banner.style.display = 'block';
+  
+  if (promoInterval) clearInterval(promoInterval);
+  
+  updateClock();
+  promoInterval = setInterval(updateClock, 1000);
+  
+  function updateClock() {
+    const now = Date.now();
+    const diff = endDate - now;
+    
+    if (diff <= 0) {
+      banner.style.display = 'none';
+      clearInterval(promoInterval);
+      return;
+    }
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    
+    const daysEl = document.getElementById('timer-days');
+    const hoursEl = document.getElementById('timer-hours');
+    const minutesEl = document.getElementById('timer-minutes');
+    const secondsEl = document.getElementById('timer-seconds');
+    
+    if (daysEl) daysEl.textContent = String(days).padStart(2, '0') + 'd';
+    if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0') + 'h';
+    if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0') + 'm';
+    if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0') + 's';
+  }
+}
+
+// ==========================================================================
 // EVENT LISTENERS CONFIGURATION
 // ==========================================================================
 function setupEventListeners() {
@@ -457,6 +636,23 @@ function setupEventListeners() {
     overlay.addEventListener('click', closeCartDrawer);
   }
   
+  // Coupon Application Events
+  const applyCouponBtn = document.getElementById('apply-coupon-btn');
+  const couponInput = document.getElementById('cart-coupon-input');
+  if (applyCouponBtn && couponInput) {
+    applyCouponBtn.addEventListener('click', () => {
+      const code = couponInput.value.trim().toUpperCase();
+      handleCouponApplication(code);
+    });
+    
+    couponInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const code = couponInput.value.trim().toUpperCase();
+        handleCouponApplication(code);
+      }
+    });
+  }
+
   // Quick View triggers
   const closeQvBtn = document.getElementById('close-qv-btn');
   if (closeQvBtn) {
@@ -567,6 +763,12 @@ function handleCheckoutSubmit(e) {
   });
   
   message += `\n*Subtotal:* ${formatCurrency(getCartSubtotal())}\n`;
+  if (appliedCoupon) {
+    message += `*Cupom Aplicado:* ${appliedCoupon.code} (-${formatCurrency(getCartDiscount())})\n`;
+    message += `*Total Final:* ${formatCurrency(getCartTotal())}\n`;
+  } else {
+    message += `*Total Final:* ${formatCurrency(getCartTotal())}\n`;
+  }
   message += `*Entrega:* A combinar (Frete Grátis em POA)\n`;
   message += `*Forma de Pagamento:* ${paymentMethod}\n\n`;
   
@@ -585,6 +787,7 @@ function handleCheckoutSubmit(e) {
   
   // Post-purchase cleanup
   cart = [];
+  appliedCoupon = null;
   saveCart();
   updateCartUI();
   closeCheckoutModal();

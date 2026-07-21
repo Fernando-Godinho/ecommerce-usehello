@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use Hello | Painel de Controle Administrativo</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/png" href="https://firebasestorage.googleapis.com/v0/b/webcatalogo-1.appspot.com/o/6qoLmB0EkQWJnSRhZAvA%2F6qoLmB0EkQWJnSRhZAvA.jpg?alt=media&token=07e780e5-2c5a-4b71-b888-940cac50b395">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Login Protection Screen -->
+  <div class="login-overlay" id="login-overlay">
+    <div class="login-box">
+      <img src="https://firebasestorage.googleapis.com/v0/b/webcatalogo-1.appspot.com/o/6qoLmB0EkQWJnSRhZAvA%2F6qoLmB0EkQWJnSRhZAvA.jpg?alt=media&token=07e780e5-2c5a-4b71-b888-940cac50b395" alt="Use Hello" class="login-logo">
+      <h2>Painel de Controle</h2>
+      <p>Insira a senha de acesso para gerenciar a loja.</p>
+      
+      <form id="login-form">
+        <div class="form-group">
+          <input type="password" id="login-password" required placeholder="Digite a senha">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Acessar Painel</button>
+      </form>
+      <p class="login-hint">Senha padrão: <strong>hello1234</strong></p>
+    </div>
+  </div>
+
+  <!-- Admin Layout Wrapper -->
+  <div class="admin-wrapper" id="admin-main-content">
+    
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <img src="https://firebasestorage.googleapis.com/v0/b/webcatalogo-1.appspot.com/o/6qoLmB0EkQWJnSRhZAvA%2F6qoLmB0EkQWJnSRhZAvA.jpg?alt=media&token=07e780e5-2c5a-4b71-b888-940cac50b395" alt="Use Hello" class="sidebar-logo">
+        <div>
+          <h3>Use Hello</h3>
+          <span>Admin</span>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-target="dashboard-section" id="nav-dashboard">
+          <span class="nav-icon">📊</span> Dashboard
+        </button>
+        <button class="nav-item" data-target="products-section" id="nav-products">
+          <span class="nav-icon">🛍️</span> Produtos
+        </button>
+        <button class="nav-item" data-target="coupons-section" id="nav-coupons">
+          <span class="nav-icon">🎟️</span> Cupons
+        </button>
+        <button class="nav-item" data-target="promotions-section" id="nav-promotions">
+          <span class="nav-icon">⏱️</span> Cronômetro e Promoção
+        </button>
+        <button class="nav-item" data-target="publish-section" id="nav-publish">
+          <span class="nav-icon">🚀</span> Publicar Alterações
+        </button>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <a href="index.html" class="view-store-btn" target="_blank"> Ver Loja 🔗</a>
+        <button class="logout-btn" id="logout-trigger-btn">Sair</button>
+      </div>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="admin-content-area">
+      
+      <!-- HEADER -->
+      <header class="admin-header">
+        <div class="header-left">
+          <h1 id="page-title">Dashboard</h1>
+          <p id="page-subtitle">Visão geral do catálogo e configurações da sua loja.</p>
+        </div>
+        <div class="header-right">
+          <button class="btn btn-primary" id="quick-export-btn">Exportar Tudo 📥</button>
+        </div>
+      </header>
+
+      <!-- ==================== DASHBOARD SECTION ==================== -->
+      <section class="admin-section active" id="dashboard-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-icon">📦</span>
+            <div class="stat-info">
+              <h3 id="stat-products-count">0</h3>
+              <p>Produtos no Catálogo</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🎟️</span>
+            <div class="stat-info">
+              <h3 id="stat-coupons-count">0</h3>
+              <p>Cupons Ativos</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">⏱️</span>
+            <div class="stat-info">
+              <h3 id="stat-timer-status">Inativo</h3>
+              <p>Status da Promoção</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-banner-box">
+          <h2>Como publicar suas alterações no ar? 🚀</h2>
+          <p>Este painel armazena temporariamente suas modificações no seu navegador. Para que os clientes vejam as mudanças:</p>
+          <ol>
+            <li>Realize todas as edições desejadas no catálogo, cupons e timers.</li>
+            <li>Acesse a aba <strong>"Publicar Alterações"</strong> no menu lateral.</li>
+            <li>Baixe os arquivos <strong>products.js</strong> e <strong>config.js</strong>.</li>
+            <li>Substitua os arquivos correspondentes na pasta do projeto no Git e faça o commit/push.</li>
+            <li>O Easypanel identificará a alteração e subirá a nova versão da loja em segundos!</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ==================== PRODUCTS SECTION ==================== -->
+      <section class="admin-section" id="products-section">
+        <div class="section-actions-row">
+          <div class="search-box">
+            <input type="text" id="admin-search-products" placeholder="Buscar produtos...">
+          </div>
+          <button class="btn btn-primary" id="open-product-modal-btn">＋ Novo Produto</button>
+        </div>
+
+        <div class="table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th width="80">Imagem</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th width="120">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="admin-products-tbody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== COUPONS SECTION ==================== -->
+      <section class="admin-section" id="coupons-section">
+        <div class="section-actions-row">
+          <h3>Cupons de Desconto Cadastrados</h3>
+          <button class="btn btn-primary" id="open-coupon-modal-btn">＋ Novo Cupom</button>
+        </div>
+
+        <div class="table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Status</th>
+                <th width="120">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="admin-coupons-tbody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== PROMOTIONS SECTION ==================== -->
+      <section class="admin-section" id="promotions-section">
+        <div class="card-box">
+          <h2>Cronômetro de Escassez (Promoção)</h2>
+          <p class="box-desc">Configure um banner com cronômetro regressivo para engajar os clientes a comprarem imediatamente.</p>
+          
+          <form id="promo-timer-form">
+            <div class="form-row">
+              <label class="toggle-switch-container">
+                <input type="checkbox" id="promo-active-checkbox">
+                <span class="toggle-slider"></span>
+                <strong>Ativar Banner de Cronômetro na Loja</strong>
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <label for="promo-title">Título da Promoção</label>
+              <input type="text" id="promo-title" placeholder="Ex: OFERTA RELÂMPAGO" required>
+            </div>
+
+            <div class="form-group">
+              <label for="promo-subtitle">Subtítulo / Descrição</label>
+              <input type="text" id="promo-subtitle" placeholder="Ex: Ganhe frete grátis em POA e 10% OFF! Expira em:" required>
+            </div>
+
+            <div class="form-group">
+              <label for="promo-enddate">Data e Hora de Término</label>
+              <input type="datetime-local" id="promo-enddate" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Salvar Configuração</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ==================== PUBLISH SECTION ==================== -->
+      <section class="admin-section" id="publish-section">
+        <div class="publish-cards-grid">
+          <div class="publish-card">
+            <span class="card-icon">📦</span>
+            <h3>Banco de Dados de Produtos</h3>
+            <p>Contém todos os 51 produtos atuais, incluindo quaisquer novos itens adicionados, preços reajustados ou exclusões.</p>
+            <button class="btn btn-primary btn-block btn-lg" id="export-products-js-btn">Baixar products.js</button>
+          </div>
+
+          <div class="publish-card">
+            <span class="card-icon">⚙️</span>
+            <h3>Configurações de Cupons e Cronômetro</h3>
+            <p>Contém as chaves de cupons válidos e o cronômetro promocional que você ajustou na aba de promoções.</p>
+            <button class="btn btn-primary btn-block btn-lg" id="export-config-js-btn">Baixar config.js</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ==================== PRODUCT MODAL ==================== -->
+  <div class="modal-overlay" id="product-modal-overlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 id="product-modal-title">Novo Produto</h2>
+        <button class="close-modal-btn" id="close-product-modal-btn">&times;</button>
+      </div>
+      <form id="product-form" class="modal-form">
+        <input type="hidden" id="form-product-id">
+        
+        <div class="form-group">
+          <label for="prod-title">Nome do Produto *</label>
+          <input type="text" id="prod-title" required placeholder="Ex: Macacão Julia Canelado">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="prod-price">Preço *</label>
+            <input type="text" id="prod-price" required placeholder="Ex: R$ 219,90">
+          </div>
+          <div class="form-group flex-1">
+            <label for="prod-category">Categoria *</label>
+            <select id="prod-category" required>
+              <option value="Conjuntos">Conjuntos</option>
+              <option value="Macacões">Macacões</option>
+              <option value="Casacos">Casacos</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prod-image">URL da Imagem *</label>
+          <input type="url" id="prod-image" required placeholder="Cole o link da imagem (ex: Firebase Storage)">
+        </div>
+
+        <div class="form-group">
+          <label for="prod-desc">Descrição do Produto</label>
+          <textarea id="prod-desc" rows="4" placeholder="Modelagem de compressão canelada, alta elasticidade, veste até 42..."></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancel-product-btn">Cancelar</button>
+          <button type="submit" class="btn btn-primary" id="save-product-btn">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== COUPON MODAL ==================== -->
+  <div class="modal-overlay" id="coupon-modal-overlay">
+    <div class="modal-container modal-sm">
+      <div class="modal-header">
+        <h2 id="coupon-modal-title">Novo Cupom</h2>
+        <button class="close-modal-btn" id="close-coupon-modal-btn">&times;</button>
+      </div>
+      <form id="coupon-form" class="modal-form">
+        
+        <div class="form-group">
+          <label for="coup-code">Código do Cupom *</label>
+          <input type="text" id="coup-code" required placeholder="Ex: HELLO15" style="text-transform: uppercase;">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="coup-type">Tipo de Desconto *</label>
+            <select id="coup-type" required>
+              <option value="percentage">Porcentagem (%)</option>
+              <option value="fixed">Valor Fixo (R$)</option>
+            </select>
+          </div>
+          <div class="form-group flex-1">
+            <label for="coup-value">Valor do Desconto *</label>
+            <input type="number" id="coup-value" required min="1" placeholder="Ex: 10">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="toggle-switch-container">
+            <input type="checkbox" id="coup-active-checkbox" checked>
+            <span class="toggle-slider"></span>
+            <strong>Cupom Ativo</strong>
+          </label>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancel-coupon-btn">Cancelar</button>
+          <button type="submit" class="btn btn-primary" id="save-coupon-btn">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -34,6 +34,20 @@
     <p>⚡ ENVIOS PARA TODO BRASIL | FRETE GRÁTIS EM PORTO ALEGRE ⚡</p>
   </div>
 
+  <!-- Promo Countdown Banner -->
+  <div class="promo-countdown-banner" id="promo-countdown-banner" style="display: none;">
+    <div class="promo-banner-container">
+      <span class="promo-tag" id="promo-banner-title">OFERTA RELÂMPAGO</span>
+      <span class="promo-desc" id="promo-banner-subtitle">Desconto expira em:</span>
+      <div class="countdown-clock" id="countdown-clock">
+        <span class="clock-unit" id="timer-days">00d</span> :
+        <span class="clock-unit" id="timer-hours">00h</span> :
+        <span class="clock-unit" id="timer-minutes">00m</span> :
+        <span class="clock-unit" id="timer-seconds">00s</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Header Section -->
   <header class="main-header" id="site-header">
     <div class="header-container">
@@ -162,9 +176,21 @@
     
     <!-- Cart Footer (Sticky) -->
     <div class="cart-footer" id="cart-footer-box">
+      <!-- Coupon Code Input Box -->
+      <div class="cart-coupon-box">
+        <div class="coupon-input-group">
+          <input type="text" id="cart-coupon-input" placeholder="CUPOM DE DESCONTO">
+          <button id="apply-coupon-btn">Aplicar</button>
+        </div>
+        <div id="coupon-feedback-message"></div>
+      </div>
       <div class="cart-total-row">
         <span>Subtotal:</span>
         <span class="total-price-val" id="cart-subtotal-val">R$ 0,00</span>
+      </div>
+      <div class="cart-total-row discount-row" id="cart-discount-row" style="display: none;">
+        <span>Desconto (<span id="applied-coupon-name">CUPOM</span>):</span>
+        <span id="cart-discount-val" style="color: var(--accent); font-weight: 700;">-R$ 0,00</span>
       </div>
       <div class="cart-total-row shipping-row">
         <span>Entrega:</span>
@@ -396,6 +422,7 @@
 
   <!-- Scripts -->
   <script src="products.js"></script>
+  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
